@@ -95,7 +95,10 @@ def main(unused_argv):
       model_dir=FLAGS.model_dir,
       tpu_config=tf.estimator.tpu.TPUConfig(
           iterations_per_loop=FLAGS.iterations_per_loop,
-          num_shards=FLAGS.num_shards))
+          num_shards=FLAGS.num_shards),
+      save_summary_steps=100,
+      save_checkpoints_steps=100,
+      save_checkpoints_secs=None)
 
   kwargs = {}
   if FLAGS.train_batch_size:

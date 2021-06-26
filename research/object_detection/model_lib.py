@@ -1023,8 +1023,7 @@ def continuous_eval_generator(estimator,
     return True
 
   for ckpt in tf.train.checkpoints_iterator(
-      model_dir, min_interval_secs=180, timeout=None,
-      timeout_fn=terminate_eval):
+      model_dir, min_interval_secs=1, timeout=None, timeout_fn=None):
 
     tf.logging.info('Starting Evaluation.')
     try:
