@@ -23,9 +23,12 @@ REQUIRED_PACKAGES = [
     'pandas',
     'tf-models-official>=2.5.1',
     'tensorflow_io',
-    # Workaround due to
-    # https://github.com/keras-team/keras/issues/15583
-    'keras==2.6.0'
+    # Prevent "ValueError: numpy.ndarray size changed, may indicate
+    # binary incompatibility. Expected 88 from C header, got 80 from
+    # PyObject". See https://stackoverflow.com/questions/66060487
+    # # Workaround due to
+    # # https://github.com/keras-team/keras/issues/15583
+    # 'keras==2.6.0'
 ]
 
 setup(
